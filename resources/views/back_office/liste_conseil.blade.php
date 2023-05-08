@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Tout sur l'intelligence artificielle">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
@@ -85,6 +85,11 @@
                     <!-- Classy Menu -->
                     <nav class="classy-navbar justify-content-between">
 
+                        <!-- Subscribe btn -->
+                        <div class="subscribe-btn">
+                            <a href="/information/create-form" class="btn subscribe-btn">Nouveau</a>
+                        </div>
+
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -100,11 +105,11 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="/intelligence-artificielle-info/list">All</a></li>
-                                   <li><a href="/intelligence-artificielle-info/list-actualite">Actualités</a></li>
-                                   <li><a href="/intelligence-artificielle-info/list-formation">Educations</a></li>
-                                   <li><a href="/intelligence-artificielle-info/list-tendance">Tendances</a></li>
-                                   <li><a href="/intelligence-artificielle-info/list-conseil">Conseils</a></li>
+                                    <li><a href="/information/list">All</a></li>
+                                   <li><a href="/information/list-actualite">Actualités</a></li>
+                                   <li><a href="/information/list-formation">Educations</a></li>
+                                   <li><a href="/information/list-tendance">Tendances</a></li>
+                                   <li><a href="/information/list-conseil">Conseils</a></li>
                                 </ul>
 
                                 <!-- Search Form  -->
@@ -161,7 +166,7 @@
                         </div>
                     </div>
                     <?php } ?>
-                    <?php echo $info->links(); ?>
+
 
                 </div>
             </div>

@@ -1,16 +1,13 @@
-<?php
-    use App\Models\Info;
-?>
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Tout sur l'intelligence artificielle">
+    <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-	<meta name="keywords" content="photo, html">
+	<meta name="keywords" content="<?php echo $info['contenu']; ?>">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
@@ -85,6 +82,11 @@
                     <!-- Classy Menu -->
                     <nav class="classy-navbar justify-content-between">
 
+                        <!-- Subscribe btn -->
+                        <div class="subscribe-btn">
+                            <a href="/information/create-form" class="btn subscribe-btn">Nouveau</a>
+                        </div>
+
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -100,11 +102,11 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="/intelligence-artificielle-info/list">All</a></li>
-                                   <li><a href="/intelligence-artificielle-info/list-actualite">Actualités</a></li>
-                                   <li><a href="/intelligence-artificielle-info/list-formation">Educations</a></li>
-                                   <li><a href="/intelligence-artificielle-info/list-tendance">Tendances</a></li>
-                                   <li><a href="/intelligence-artificielle-info/list-conseil">Conseils</a></li>
+                                    <li><a href="/information/list">All</a></li>
+                                   <li><a href="/information/list-actualite">Actualités</a></li>
+                                   <li><a href="/information/list-formation">Educations</a></li>
+                                   <li><a href="/information/list-tendance">Tendances</a></li>
+                                   <li><a href="/information/list-conseil">Conseils</a></li>
                                 </ul>
 
                                 <!-- Search Form  -->
@@ -132,41 +134,13 @@
             <div class="row">
                 <div class="col-12 col-lg-12">
                     <!-- Single Blog Area  -->
-                    <?php foreach($info as $row){
-                        $slug = Info::slugify($row['titre']);
-                    ?>
-
-                    <div class="single-blog-area blog-style-2 mb-50 wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="1000ms">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-6">
-                                <div class="single-blog-thumbnail">
-                                    <img src="<?php echo "/".$row['image']; ?>" alt="">
-                                    <div class="post-date">
-                                        <a href="#"><span><?php echo $row['date']; ?></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <!-- Blog Content -->
-                                <div class="single-blog-content">
-                                    <div class="line"></div>
-                                    <a href="#" class="post-tag"><?php echo $row['categorie']; ?></a>
-                                    <h4><a href="/<?php echo $slug?>-<?php echo $row['id']; ?>.html" class="post-headline"><?php echo $row['titre']; ?></a></h4>
-                                    <p><?php echo $row['resume']; ?></p>
-                                    <div class="post-meta">
-                                        <p>Par <a href="#"><?php echo $row['nom']; ?></a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php } ?>
-                    <?php echo $info->links(); ?>
-
+                    <img src="<?php echo "/".$info['image']; ?>" alt="">
+                    <?php echo $info['contenu']; ?>
                 </div>
             </div>
         </div>
     </div>
+    <!-- ##### Blog Wrapper End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area text-center">

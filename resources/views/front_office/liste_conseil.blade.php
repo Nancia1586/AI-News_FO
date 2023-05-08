@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Tout sur l'intelligence artificielle">
+    <meta name="description" content="Des conseils pratiques concernant l'intelligence artificielle">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
@@ -85,6 +85,8 @@
                     <!-- Classy Menu -->
                     <nav class="classy-navbar justify-content-between">
 
+
+
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -161,7 +163,7 @@
                         </div>
                     </div>
                     <?php } ?>
-                    <?php echo $info->links(); ?>
+
 
                 </div>
             </div>

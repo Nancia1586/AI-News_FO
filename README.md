@@ -1,1 +1,1 @@
-# AI-News_FO
+# AI-News
