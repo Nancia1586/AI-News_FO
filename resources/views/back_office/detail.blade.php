@@ -134,7 +134,7 @@
             <div class="row">
                 <div class="col-12 col-lg-12">
                     <!-- Single Blog Area  -->
-                    <img src="<?php echo "/".$info['image']; ?>" alt="<?php echo $row['titre']; ?>">
+                    <img src="<?php echo "/".$info['image']; ?>" alt="">
                     <?php echo $info['contenu']; ?>
                 </div>
             </div>
