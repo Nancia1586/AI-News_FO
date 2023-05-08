@@ -14,7 +14,7 @@ CREATE TABLE categorie(
 );
 INSERT INTO Categorie(categorie)
 VALUES
-    ('Actualites et evenements'),
+    ('Actualités et évènements'),
     ('Educations et formations'),
     ('Tendances et innovations'),
     ('Conseils pratiques');
@@ -32,3 +32,17 @@ CREATE TABLE info(
     FOREIGN KEY (auteurid) REFERENCES auteur(id)
 );
 
+create or replace view v_liste as
+select i.*,c.categorie,a.nom,a.email from info i join auteur a on i.auteurid = a.id join categorie c on i.categorieid = c.id;
+
+create or replace view v_liste_actualite as
+select i.*,c.categorie,a.nom,a.email from info i join auteur a on i.auteurid = a.id join categorie c on i.categorieid = c.id where i.categorieid = 1;
+
+create or replace view v_liste_formation as
+select i.*,c.categorie,a.nom,a.email from info i join auteur a on i.auteurid = a.id join categorie c on i.categorieid = c.id where i.categorieid = 2;
+
+create or replace view v_liste_tendance as
+select i.*,c.categorie,a.nom,a.email from info i join auteur a on i.auteurid = a.id join categorie c on i.categorieid = c.id where i.categorieid = 3;
+
+create or replace view v_liste_conseil as
+select i.*,c.categorie,a.nom,a.email from info i join auteur a on i.auteurid = a.id join categorie c on i.categorieid = c.id where i.categorieid = 4;

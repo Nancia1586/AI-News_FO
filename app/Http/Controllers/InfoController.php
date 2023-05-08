@@ -5,19 +5,113 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Info;
 use App\Models\Categorie;
+use App\Models\V_Liste;
+use App\Models\V_Liste_actualite;
+use App\Models\V_Liste_formation;
+use App\Models\V_Liste_tendance;
+use App\Models\V_Liste_conseil;
 use Illuminate\Support\Facades\Session;
 
 class InfoController extends Controller
 {
-    public function back_office_list()
+    public function back_office_list(Request $request)
     {
-        $info = Info::liste();
+        $info = V_Liste::paginate(3);
         return view('back_office.liste',[
             'info' => $info
         ]);
     }
 
-    public function createform()
+    public function back_office_list_actualite(Request $request)
+    {
+        $info = V_Liste_actualite::paginate(3);
+        return view('back_office.liste_actualite',[
+            'info' => $info
+        ]);
+    }
+
+    public function back_office_list_formation(Request $request)
+    {
+        $info = V_Liste_formation::paginate(3);
+        return view('back_office.liste_formation',[
+            'info' => $info
+        ]);
+    }
+
+    public function back_office_list_tendance(Request $request)
+    {
+        $info = V_Liste_tendance::paginate(3);
+        return view('back_office.liste_tendance',[
+            'info' => $info
+        ]);
+    }
+
+    public function back_office_list_conseil(Request $request)
+    {
+        $info = V_Liste_conseil::paginate(3);
+        return view('back_office.liste_conseil',[
+            'info' => $info
+        ]);
+    }
+
+    public function back_office_detail(string $slug,string $id)
+    {
+        $info = Info::detail($id);
+        return view('back_office.detail',[
+            'info' => $info
+        ]);
+    }
+
+    public function front_office_list(Request $request)
+    {
+        $info = V_Liste::paginate(3);
+        return view('front_office.liste',[
+            'info' => $info
+        ]);
+    }
+
+    public function front_office_list_actualite(Request $request)
+    {
+        $info = V_Liste_actualite::paginate(3);
+        return view('front_office.liste_actualite',[
+            'info' => $info
+        ]);
+    }
+
+    public function front_office_list_formation(Request $request)
+    {
+        $info = V_Liste_formation::paginate(3);
+        return view('front_office.liste_formation',[
+            'info' => $info
+        ]);
+    }
+
+    public function front_office_list_tendance(Request $request)
+    {
+        $info = V_Liste_tendance::paginate(3);
+        return view('front_office.liste_tendance',[
+            'info' => $info
+        ]);
+    }
+
+    public function front_office_list_conseil(Request $request)
+    {
+        $info = V_Liste_conseil::paginate(3);
+        return view('front_office.liste_conseil',[
+            'info' => $info
+        ]);
+    }
+
+    public function front_office_detail(string $slug,string $id)
+    {
+        $info = Info::detail($id);
+        return view('front_office.detail',[
+            'info' => $info
+        ]);
+    }
+
+
+    public function createform(Request $request)
     {
         $categorie = Categorie::all();
         return view('back_office.create_form',[
@@ -39,12 +133,12 @@ class InfoController extends Controller
         $info->titre = request('titre');
         $info->resume = request('resume');
         $info->contenu = request('contenu');
-        $info->auteurid = Session::get('idauteur');
+        $info->auteurid = $request->session()->get('idauteur');
         $info->save();
         return redirect('/information/create-form');
     }
 
-    public function updateform()
+    public function updateform(Request $request)
     {
         $id = request('id');
         $info = Info::get($id);
@@ -68,7 +162,7 @@ class InfoController extends Controller
         // return redirect('/information/create-form');
     }
 
-    public function delete()
+    public function delete(Request $request)
     {
         $id = request('id');
         $info = new Info();

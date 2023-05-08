@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Util extends Model
 {
- 
+
     use HasFactory;
    public static function crypt(string $str){
 
@@ -48,7 +48,7 @@ class Util extends Model
          $str = str_replace(' ', '-', $str);
          return preg_replace('/\-{2,}', '-', $str);
        }
-   
+
     public static function login($email,$mdp){
         $tab=Users::fromQuery("select *From users where Email='".$email."' and mdp='".$mdp."' limit 1");
         $id=0;
