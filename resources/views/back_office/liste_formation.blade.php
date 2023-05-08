@@ -145,7 +145,7 @@
                         <div class="row align-items-center">
                             <div class="col-12 col-md-6">
                                 <div class="single-blog-thumbnail">
-                                    <img src="<?php echo "/".$row['image']; ?>" alt="">
+                                    <img src="<?php echo "/".$row['image']; ?>" alt="<?php echo $row['titre']; ?>">
                                     <div class="post-date">
                                         <a href="#"><span><?php echo $row['date']; ?></span></a>
                                     </div>
