@@ -25,12 +25,7 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="preload-content">
-            <div id="original-load"></div>
-        </div>
-    </div>
+
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
